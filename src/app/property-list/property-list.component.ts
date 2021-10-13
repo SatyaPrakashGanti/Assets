@@ -16,33 +16,45 @@ export class PropertyListComponent implements OnInit {
   },
   {
     "Id":2,
-    "Name":"Birla",
-    "Type":"House",
-    "Price":150000
+    "Name":"Gachibowli",
+    "Type":"Flat",
+    "Price":670000
   },
   {
     "Id":3,
-    "Name":"Birla",
-    "Type":"House",
-    "Price":150000
+    "Name":"Ramanthapur",
+    "Type":"Single BHK",
+    "Price":250000
   },
   {
     "Id":4,
-    "Name":"Birla",
+    "Name":"AshokNagar",
     "Type":"House",
     "Price":150000
   },
   {
     "Id":5,
     "Name":"Birla",
-    "Type":"House",
-    "Price":150000
+    "Type":"Flat",
+    "Price":190000
   },
   {
     "Id":6,
-    "Name":"Birla",
-    "Type":"House",
+    "Name":"Saroornagar",
+    "Type":"Flat",
     "Price":150000
+  },
+  {
+    "Id":7,
+    "Name":"Saroornagar",
+    "Type":"2 BHK",
+    "Price":1150000
+  },
+  {
+    "Id":8,
+    "Name":"Saroornagar",
+    "Type":"Individual",
+    "Price":1250000
   }
 
 ]
