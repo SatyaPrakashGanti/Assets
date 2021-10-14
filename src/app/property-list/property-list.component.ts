@@ -1,6 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+
+
+import { HousingService } from '../Services/housing.service';
 
 @Component({
   selector: 'app-property-list',
@@ -10,17 +12,20 @@ import { Subscription } from 'rxjs';
 export class PropertyListComponent implements OnInit {
 
   Properties:any;
-  constructor(private http:HttpClient) { }
+  constructor(private housingservice:HousingService) { }
 
   ngOnInit():void {
 
-    this.http.get('data/properties.json').subscribe
+   this.housingservice.geAlltProperties().subscribe
     (
-    data=>{
+    data =>
+    {
       this.Properties=data;
       console.log(data);
+    },error =>
+    {
+      console.log(error);
     }
-
     );
   }
 
