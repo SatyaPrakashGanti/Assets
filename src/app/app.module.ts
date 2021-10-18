@@ -9,6 +9,7 @@ import { PropertyListComponent } from './property-list/property-list.component';
 import { HousingService } from './Services/housing.service';
 import { AddPropertyComponent } from './add-property/add-property.component';
 import { PropertyDetailComponent } from './property-detail/property-detail.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PropertyDetailComponent } from './property-detail/property-detail.compo
     PropertyCardComponent,
     PropertyListComponent,
     AddPropertyComponent,
-    PropertyDetailComponent
+    PropertyDetailComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,

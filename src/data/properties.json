@@ -1,51 +1,67 @@
 [
     {
       "Id":1,
+      "SellRent":1,
       "Name":"Birla",
       "Type":"House",
-      "Price":150000
+      "Price":150000,
+      "Image":"prop-1.jpeg"
     },
     {
       "Id":2,
+      "SellRent":1,
       "Name":"Gachibowli",
       "Type":"Flat",
-      "Price":670000
+      "Price":670000,
+      "Image":"prop-2.jfif"
     },
     {
       "Id":3,
+      "SellRent":1,
       "Name":"Ramanthapur",
       "Type":"Single BHK",
-      "Price":250000
+      "Price":250000,
+      "Image":"prop-3.jfif"
     },
     {
       "Id":4,
+      "SellRent":1,
       "Name":"AshokNagar",
       "Type":"House",
-      "Price":150000
+      "Price":150000,
+      "Image":"prop-4.jpg"
     },
     {
       "Id":5,
+      "SellRent":1,
       "Name":"Birla",
       "Type":"Flat",
-      "Price":190000
+      "Price":190000,
+      "Image":"prop-5.jpg"
     },
     {
       "Id":6,
+      "SellRent":1,
       "Name":"Saroornagar",
       "Type":"Flat",
-      "Price":150000
+      "Price":150000,
+      "Image":"prop-6.jpg"
     },
     {
       "Id":7,
+      "SellRent":1,
       "Name":"Saroornagar",
       "Type":"2 BHK",
-      "Price":1150000
+      "Price":1150000,
+      "Image":"prop-8.jpg"
     },
     {
       "Id":8,
+      "SellRent":1,
       "Name":"Saroornagar",
       "Type":"Individual",
       "Price":1250000
+      
     }
   
   ]
