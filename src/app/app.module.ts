@@ -10,6 +10,7 @@ import { HousingService } from './Services/housing.service';
 import { AddPropertyComponent } from './add-property/add-property.component';
 import { PropertyDetailComponent } from './property-detail/property-detail.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { RentPropertyComponent } from './rent-property/rent-property.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     PropertyListComponent,
     AddPropertyComponent,
     PropertyDetailComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    RentPropertyComponent
   ],
   imports: [
     BrowserModule,
