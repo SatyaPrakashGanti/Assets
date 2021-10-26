@@ -11,7 +11,7 @@ import { AddPropertyComponent } from './add-property/add-property.component';
 import { PropertyDetailComponent } from './property-detail/property-detail.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { RentPropertyComponent } from './rent-property/rent-property.component';
-
+import {FormsModule} from '@angular/forms'
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +26,8 @@ import { RentPropertyComponent } from './rent-property/rent-property.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [HousingService],
   bootstrap: [AppComponent]

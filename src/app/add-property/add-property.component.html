@@ -1,1 +1,34 @@
-<p>add-property works!</p>
+<div class="card">
+<div class="card-header">
+Add Property
+</div>
+<div class="card-body">
+ <form (ngSubmit)='onSubmit()' #Form="ngForm">
+
+    <div class="form-group col-12">
+        <label for="lblname">Name</label>
+        <input type="text" class="form-control" id="lblname" #propName="ngModel" ngModel name="Name" placeholder="Enter Name" minlength="5" required>
+        <span *ngIf="!propName.valid && propName.touched" class="error-block">
+            <span *ngIf="propName.errors.required">Please Provide Name</span>
+            <span *ngIf="propName.errors.minlength">Name must be atleast 5 characters long</span>
+        </span>
+    </div>
+
+    <div class="form-group col-12 mt-2">
+        <label for="lbltype">Type</label>
+        <input type="text" class="form-control" id="lbltype"#propType="ngModel" ngModel name="Type" placeholder="Enter Type" required>
+        <span *ngIf="!propType.valid && propType.touched" class="error-block">Please Provide Type</span>
+    </div>
+
+    <div class="form-group col-12 mt-2">
+        <label for="lblprice">Price</label>
+        <input type="text" class="form-control" id="lblprice" #propPrice="ngModel" ngModel name="Price" placeholder="Enter Price" required>
+        <span *ngIf="!propPrice.valid && propPrice.touched" class="error-block">Please Provide Price</span>
+    </div>
+    <div class="form-group col-12 mt-2">
+        <button [disabled]="!Form.valid" type="submit" class="btn btn-primary mx-2">Add</button>
+        <button type="reset" class="btn btn-primary">Cancel</button>
+    </div>
+</form>
+</div>
+</div>

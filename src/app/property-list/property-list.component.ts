@@ -26,7 +26,7 @@ SellRent=1;
     (
     (data) =>
     {
-      console.log(this.route.snapshot.url.toString());
+      //console.log(this.route.snapshot.url.toString());
       this.Properties=data;
       console.log(data);
     },error =>
