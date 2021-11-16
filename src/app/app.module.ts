@@ -11,7 +11,9 @@ import { AddPropertyComponent } from './add-property/add-property.component';
 import { PropertyDetailComponent } from './property-detail/property-detail.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { RentPropertyComponent } from './rent-property/rent-property.component';
-import {FormsModule} from '@angular/forms'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { UserLoginComponent } from './Users/user-login/user-login.component';
+import { UserRegisterComponent } from './Users/user-register/user-register.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,13 +23,16 @@ import {FormsModule} from '@angular/forms'
     AddPropertyComponent,
     PropertyDetailComponent,
     PagenotfoundComponent,
-    RentPropertyComponent
+    RentPropertyComponent,
+    UserLoginComponent,
+    UserRegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [HousingService],
   bootstrap: [AppComponent]
