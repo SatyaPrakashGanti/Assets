@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-user-register',
   templateUrl: './user-register.component.html',
@@ -14,10 +15,35 @@ registrationForm: FormGroup;
     this.registrationForm=new FormGroup({
       userName: new FormControl(null,Validators.required),
       email: new FormControl(null,[Validators.required,Validators.email]),
-      password: new FormControl(null,Validators.required),
-      confirmPassword:new FormControl(null,Validators.required),
-      mobile:new FormControl(null,Validators.required)
-    });
+      password: new FormControl(null,[Validators.required]),
+      confirmPassword:new FormControl(null,[Validators.required]),
+      mobile:new FormControl(null,[Validators.required,Validators.maxLength(10)])
+    },this.passwordMatchingValidator);
+  }
+  passwordMatchingValidator(fg:FormGroup): Validators
+  {
+    return fg.get('password').value===fg.get('confirmPassword').value? null: {notmatched:true};
+  }
+  // Getter methods for all form controls
+  get UserName()
+  {
+    return this.registrationForm.get('userName') as FormControl;
+  }
+  get Email()
+  {
+    return this.registrationForm.get('email') as FormControl;
+  }
+  get Password()
+  {
+    return this.registrationForm.get('password') as FormControl;
+  }
+  get ConfirmPassword()
+  {
+    return this.registrationForm.get('confirmPassword') as FormControl;
+  }
+  get Mobile()
+  {
+    return this.registrationForm.get('mobile') as FormControl;
   }
   onSubmit()
   {

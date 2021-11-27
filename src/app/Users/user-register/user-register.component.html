@@ -9,30 +9,45 @@
           <div class="form-group col-12">
               <label for="name" class="form-label">Name</label>
               <input type="text" class="form-control" formControlName="userName">
+              <span *ngIf="!UserName.valid && UserName.touched" class="error-block" >Please Provide User Name</span>
           </div>
   
           <div class="form-group col-12">
             <label for="email" class="form-label">Email</label>
             <input type="text" class="form-control" formControlName="email">
+            <span *ngIf="!Email.valid && Email.touched" class="error-block" >
+              <span *ngIf="Email.errors['required']">Please Provide Email</span>
+              <span *ngIf="Email.errors.email">Please provide valid email ID</span>
+            </span>
           </div>
   
           <div class="form-group col-12">
             <label for="passwrod" class="form-label">Password</label>
             <input type="password" class="form-control" formControlName="password">
+            <span *ngIf="!Password.valid && Password.touched" class="error-block" >Please Provide Password</span>
           </div>
   
           <div class="form-group col-12">
             <label for="cpassword" class="form-label">Confirm Password</label>
             <input type="password" class="form-control" formControlName="confirmPassword">
+            <span *ngIf="!ConfirmPassword.valid && ConfirmPassword.touched" class="error-block" >
+              <span *ngIf="ConfirmPassword.hasError('required')">Please Provide Confirm Password</span>
+            </span>
+            <span *ngIf="registrationForm.hasError('notmatched') && ConfirmPassword.valid" class="error-block" >Password Not Matched</span>
           </div>
   
           <div class="form-group col-12">
             <label for="mobile" class="form-label">Mobile</label>
             <input type="text" class="form-control" formControlName="mobile">
+            <span *ngIf="!Mobile.valid && Mobile.touched" class="error-block" >
+              <span *ngIf="Mobile.hasError('required')"> Please Provide Mobile</span>
+             <span *ngIf="Mobile.hasError('maxlength')">Please Provide 10 digit mobile number</span>
+            </span>
+           
           </div>
   
           <div class="form-group col-12 mt-2">
-            <button type="submit" class="btn btn-primary mx-2">Save</button>
+            <button type="submit" [disabled]="!registrationForm.valid" class="btn btn-primary mx-2">Save</button>
             <button type="reset" class="btn btn-secondary">Cancel</button>
           </div>
           Form Values : {{registrationForm.value | json}} <br>
