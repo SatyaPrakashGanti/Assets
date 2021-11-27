@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -9,16 +9,17 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class UserRegisterComponent implements OnInit {
 registrationForm: FormGroup;
-  constructor() { }
+  constructor(private fb:FormBuilder) { }
 
   ngOnInit() {
-    this.registrationForm=new FormGroup({
-      userName: new FormControl(null,Validators.required),
-      email: new FormControl(null,[Validators.required,Validators.email]),
-      password: new FormControl(null,[Validators.required]),
-      confirmPassword:new FormControl(null,[Validators.required]),
-      mobile:new FormControl(null,[Validators.required,Validators.maxLength(10)])
-    },this.passwordMatchingValidator);
+    // this.registrationForm=new FormGroup({
+    //   userName: new FormControl(null,Validators.required),
+    //   email: new FormControl(null,[Validators.required,Validators.email]),
+    //   password: new FormControl(null,[Validators.required]),
+    //   confirmPassword:new FormControl(null,[Validators.required]),
+    //   mobile:new FormControl(null,[Validators.required,Validators.maxLength(10)])
+    // },this.passwordMatchingValidator);
+    this.createregistrationForm();
   }
   passwordMatchingValidator(fg:FormGroup): Validators
   {
@@ -44,6 +45,16 @@ registrationForm: FormGroup;
   get Mobile()
   {
     return this.registrationForm.get('mobile') as FormControl;
+  }
+  createregistrationForm()
+  {
+      this.registrationForm= this.fb.group({
+      userName: new FormControl(null,Validators.required),
+      email: new FormControl(null,[Validators.required,Validators.email]),
+      password: new FormControl(null,[Validators.required]),
+      confirmPassword:new FormControl(null,[Validators.required]),
+      mobile:new FormControl(null,[Validators.required,Validators.maxLength(10)])
+    },{validators:this.passwordMatchingValidator});
   }
   onSubmit()
   {
