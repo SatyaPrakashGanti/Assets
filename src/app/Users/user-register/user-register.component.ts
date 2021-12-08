@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/Services/user.service';
-
+import * as alertify from 'alertifyjs';
 
 @Component({
   selector: 'app-user-register',
@@ -71,6 +71,11 @@ formStatus:boolean;
    {
     this.userService.createUser(this.UserData());
     this.formStatus=false;
+    alertify.success("Congrats!, you are successfully registered");
+   }
+   else 
+   {
+    alertify.error("Kindly provide the required fields");
    }
   }
 
