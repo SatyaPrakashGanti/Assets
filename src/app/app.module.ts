@@ -14,6 +14,8 @@ import { RentPropertyComponent } from './rent-property/rent-property.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { UserLoginComponent } from './Users/user-login/user-login.component';
 import { UserRegisterComponent } from './Users/user-register/user-register.component'
+import { AlertifyService } from './Services/alertify.service';
+import { UserService } from './Services/user.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +28,7 @@ import { UserRegisterComponent } from './Users/user-register/user-register.compo
     RentPropertyComponent,
     UserLoginComponent,
     UserRegisterComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -33,8 +36,9 @@ import { UserRegisterComponent } from './Users/user-register/user-register.compo
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
+    
   ],
-  providers: [HousingService],
+  providers: [HousingService,AlertifyService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
