@@ -8,10 +8,10 @@ export class AlertifyService {
   constructor() { }
   Success(message:string)
   {
-  alertify.success("Congrats!, you are successfully registered");
+  alertify.success(message);
   }
   Error(message:string)
   {
-    alertify.error("Kindly provide the required fields");
+    alertify.error(message);
   }
 }
