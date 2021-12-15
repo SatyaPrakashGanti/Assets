@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import{HttpClientModule} from '@angular/common/http'
+import{HttpClientModule} from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -17,6 +19,7 @@ import { UserRegisterComponent } from './Users/user-register/user-register.compo
 import { AlertifyService } from './Services/alertify.service';
 import { UserService } from './Services/user.service';
 import { AuthService } from './Services/auth.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +39,9 @@ import { AuthService } from './Services/auth.service';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    BsDropdownModule.forRoot()
     
   ],
   providers: [HousingService,AlertifyService,UserService,AuthService],
