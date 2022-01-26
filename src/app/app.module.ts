@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import{HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+ import{TabsModule} from 'ngx-bootstrap/tabs';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -19,7 +20,8 @@ import { UserRegisterComponent } from './Users/user-register/user-register.compo
 import { AlertifyService } from './Services/alertify.service';
 import { UserService } from './Services/user.service';
 import { AuthService } from './Services/auth.service';
-
+import{ButtonsModule} from 'ngx-bootstrap/buttons';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +43,10 @@ import { AuthService } from './Services/auth.service';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    TabsModule.forRoot(),
+    ButtonsModule.forRoot(),
+    BsDatepickerModule.forRoot()
     
   ],
   providers: [HousingService,AlertifyService,UserService,AuthService],
