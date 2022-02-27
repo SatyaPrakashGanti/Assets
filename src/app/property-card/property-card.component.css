@@ -1,7 +1,8 @@
 
 .card
 {
-    width:270px;
+    min-height: 400px;
+   
 }
 .card-img-wrapper
 {
